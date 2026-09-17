@@ -2,8 +2,6 @@
 
 In pure Python, adding two lists requires looping through every element. In NumPy, arithmetic operations are **vectorized**—they execute in parallel at C-speed across entire arrays element-by-element.
 
-
-
 ```python
 import numpy as np
 
@@ -40,8 +38,6 @@ axis 0  [ 4,  5,  6 ] ]
  (down)
 ```
 
-
-
 ```python
 matrix = np.array([
     [1, 2, 3],
@@ -62,8 +58,6 @@ print(matrix.sum(axis=1))  # [1+2+3, 4+5+6] = [6, 15]
 ### 3. Aggregations (`sum`, `mean`, `std`, `min`, `max`, `argmin`, `argmax`)
 
 Aggregations reduce arrays to summary statistics—used everywhere in calculating loss, accuracy, and normalizations.
-
-
 
 ```python
 scores = np.array([
@@ -129,8 +123,6 @@ print(matrix + row_vec)
 
 Comparisons produce boolean arrays that allow element-by-element evaluation.
 
-
-
 ```python
 data = np.array([12, 45, 67, 89, 23])
 
@@ -150,8 +142,6 @@ print(np.all(data > 80))    # False (not all elements satisfy)
 `np.where(condition, x, y)` acts like a vectorized `if-else` statement:
 
 $$\text{Output} = \begin{cases} x & \text{if condition is True} \\ y & \text{if condition is False} \end{cases}$$
-
-Python
 
 ```python
 scores = np.array([45, 78, 92, 30, 65])
@@ -185,8 +175,6 @@ print("Sorted Indices:", indices)  # [1 3 2 0] -> arr[1]=10 is smallest, arr[0]=
 
 ### 8. Searching Arrays (`np.nonzero`, `np.searchsorted`)
 
-
-
 ```python
 arr = np.array([10, 0, 25, 0, 50])
 
@@ -203,8 +191,6 @@ print("Insert 25 at index:", insert_pos)  # Index 2
 ### 9. Random Number Generation (`np.random`)
 
 Used extensively for parameter initialization, data shuffling, and dropout layers.
-
-
 
 ```python
 # Set seed for reproducibility (makes random generation deterministic across runs)
